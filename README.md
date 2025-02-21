@@ -1,4 +1,9 @@
 ## Hi there 👋
+![GitHub followers](https://img.shields.io/github/followers/avinash-shukla1?style=social)
+![GitHub stars](https://img.shields.io/github/stars/avinash-shukla1?style=social)
+![Profile Views](https://komarev.com/ghpvc/?username=avinash-shukla1&color=blue)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=avinash-shukla1)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=avinash-shukla1)
 
 <!--
 **avinash-shukla1/avinash-shukla1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
