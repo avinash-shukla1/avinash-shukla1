@@ -1,5 +1,5 @@
 <h1 align="center">Namaste 🙏, I'm Avinash Shukla</h1>
-<h3 align="center">FULL Web Developer | MERN Stack | Ethical Hacker | Data Scientist Enthusiast</h3>
+<h3 align="center">FULL stack Web Developer | MERN Stack | Ethical Hacker | Data Scientist Enthusiast</h3>
 
 ---
 
