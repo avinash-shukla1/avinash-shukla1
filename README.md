@@ -40,6 +40,10 @@
 
 ## 📂 Projects  
 
+### **portfolio site**
+🚀https://avinash-portfolio-olive.vercel.app/
+
+
 ### **Frontend Projects**  
 
 🚀 [Q Clay Clone](#) - Fully animated website (GSAP, ScrollTrigger, Motion.js)  
