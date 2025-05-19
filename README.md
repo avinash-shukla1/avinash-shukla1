@@ -41,9 +41,10 @@
 ## 📂 Projects  
 
 ### **Frontend Projects**  
+
 🚀 [Q Clay Clone](#) - Fully animated website (GSAP, ScrollTrigger, Motion.js)  
 🚀 [Obys Agency Clone](https://avinash-shukla1.github.io/obys.agency-clone/)  
-🚀 [Music Player](#) | [Portfolio Site](#)  
+🚀 [Music Player](#) | [Portfolio Site](https://avinash-portfolio-olive.vercel.app/)  
 
 ### **Backend & Full-Stack Projects**  
 🔥 [WhatsApp Clone](#) - Real-time messaging using Socket.io  
