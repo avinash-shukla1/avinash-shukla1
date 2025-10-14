@@ -30,7 +30,13 @@
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 
----
+## 🏆Experience:-Full Stack Developer Intern – Tourmates (Feb 2025 – Aug 2025)
+• Worked on Property Partner module, a property and hotel management system.
+• Developed multi-step room creation forms with image upload & validation features.
+• Integrated REST APIs for property listings, bookings, and partner dashboard.
+• Implemented secure authentication and role-based access (Admin, Property Owner, Staff).
+• Used React.js, Node.js, Express.js, MongoDB for full stack development.
+• Deployed project on cloud server and optimized performance for faster load times.
 
 ## 🏆 Achievements & Certifications  
 - 🏅 **Sheryians Coding School - Senior vs Junior Championship** (Top 20 Designs)  
