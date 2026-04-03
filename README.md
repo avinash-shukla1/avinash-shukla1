@@ -58,9 +58,6 @@
 
 ### **Backend & Full-Stack Projects**  
 🔥 [WhatsApp Clone](#) - Real-time messaging using Socket.io  
-🔥 [Pinterest Clone](#) - Authenticated user experience with Mongoose, Passport.js  
-🔥 [Instagram Clone](#) - Full-stack social media experience  
-
 ### **MERN & AI/ML Projects**  
 📖 [Bookstore App](#) - Explore new authors and books  
 🤖 **AI Chatbot** - AI-powered chatbot using **Python & NLP**  
