@@ -57,7 +57,7 @@
 🚀 [Music Player](#) | [Portfolio Site](https://avinash-portfolio-olive.vercel.app/)  
 
 ### **Backend & Full-Stack Projects**  
-🔥 [WhatsApp Clone](#) - Real-time messaging using Socket.io  
+🔥 [WhatsApp Clone](https://whatsapp-clone-delta.vercel.app/) - Real-time messaging using Socket.io  
 ### **MERN & AI/ML Projects**  
 🤖 **AI Chatbot** - AI-powered chatbot using **Python & NLP**  
 📊 **Data Analysis Project** - Analyzing business data using **Pandas & NumPy**  
