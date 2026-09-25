@@ -40,14 +40,15 @@ function App() {
   const closeMenu = () => setMenuOpen(false)
 
   return <>
+    <a className="skip-link" href="#main-content">Skip to main content</a>
     <header data-lg-key="2d2abb6393" className="site-header" id="top">
       <div data-lg-key="fc5dcc6244" className="header-inner wrap">
         <a data-lg-key="a00ac64ff0" className="brand" href="#top" aria-label="Avinash Shukla, back to top" onClick={closeMenu}>
           <span data-lg-key="fd468bf3d2" className="brand-mark">a<span data-lg-key="631a5aea99">.</span></span><span data-lg-key="36c581ca8d" className="brand-name">AVINASH<br data-lg-key="ca41ac4d4e" />SHUKLA</span>
         </a>
         <span data-lg-key="dfacd5963a" className="header-note">INDEPENDENT DEVELOPER<br data-lg-key="0096fec51a" />& CREATIVE THINKER</span>
-        <button data-lg-key="39a3a40665" className="menu-toggle" type="button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close −' : 'Menu +'}</button>
-        <nav data-lg-key="e109f61945" className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Main navigation">
+        <button data-lg-key="39a3a40665" className="menu-toggle" type="button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-controls="home-navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close −' : 'Menu +'}</button>
+        <nav data-lg-key="e109f61945" id="home-navigation" className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Main navigation">
           <a data-lg-key="0b6a5e9b83" href="/projects" onClick={closeMenu}>Projects</a>
           <a data-lg-key="f7c6b638dc" href="/writing" onClick={closeMenu}>Writing</a>
           <a data-lg-key="55caac1c54" href="/activity" onClick={closeMenu}>Activity</a>
@@ -56,7 +57,7 @@ function App() {
       </div>
     </header>
 
-    <main data-lg-key="e2f0e0a986">
+    <main data-lg-key="e2f0e0a986" id="main-content" tabIndex={-1}>
       <section data-lg-key="d7d4a36709" className="hero wrap" aria-labelledby="hero-title">
         <div data-lg-key="282192f80c" className="hero-topline"><span data-lg-key="c4478aabfc" className="eyebrow"><span data-lg-key="872dafb883" className="orange-dot" /> OPEN TO WHAT'S NEXT</span><span data-lg-key="7e8d507346" className="eyebrow hero-index">PORTFOLIO / AVINASH SHUKLA</span></div>
         <h1 data-lg-key="dc01514ca6" id="hero-title">Building things<br data-lg-key="49dc9e8d84" />that <em data-lg-key="4cfff07a64">feel</em> as good<br data-lg-key="6d066dd5b4" />as they <span data-lg-key="686a445953" className="underlined">work.</span></h1>

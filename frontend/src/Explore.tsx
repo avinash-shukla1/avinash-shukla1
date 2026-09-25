@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { updatePageMetadata } from './metadata'
 import './explore.css'
 
 type Project = { slug: string; title: string; kind: 'Full-stack' | 'Frontend' | 'Experience'; summary: string; stack: string; link?: string; linkLabel?: string; detail?: string[]; role?: string }
@@ -83,7 +84,8 @@ function NotFound() { return <div className="explore-content explore-head"><span
 
 export default function Explore() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const path = decodeURIComponent(window.location.pathname).replace(/\/$/, '') || '/'
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+  useEffect(() => { updatePageMetadata(path) }, [path])
   let content
   if (path === '/projects') content = <Gallery />
   else if (path.startsWith('/projects/')) content = <CaseStudy slug={path.slice('/projects/'.length)} />
@@ -91,5 +93,5 @@ export default function Explore() {
   else if (path.startsWith('/writing/')) content = <Writing slug={path.slice('/writing/'.length)} />
   else if (path === '/activity') content = <Activity />
   else content = <NotFound />
-  return <div className="explore-page"><header className="site-header"><div className="header-inner wrap"><a className="brand" href="/" aria-label="Avinash Shukla, home"><span className="brand-mark">a<span>.</span></span><span className="brand-name">AVINASH<br />SHUKLA</span></a><span className="header-note">SELECTED WORK<br />& FIELD NOTES</span><button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close −' : 'Menu +'}</button><nav className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Main navigation"><a href="/">Home</a><a href="/projects">Projects</a><a href="/writing">Writing</a><a href="/activity">Activity</a><a className="nav-contact" href="/Avinash-Shukla-Resume.pdf" download="Avinash-Shukla-Resume.pdf">Résumé ↓</a></nav></div></header><main className="wrap explore-main">{content}</main><footer className="footer"><div className="wrap footer-inner"><a className="footer-brand" href="/">a<span>.</span></a><span>© {new Date().getFullYear()} AVINASH SHUKLA<br />MADE WITH INTENTION.</span><div className="footer-links"><a href="/projects">Projects ↗</a><a href="/writing">Writing ↗</a><a href="/activity">Activity ↗</a><a href="mailto:Avinashshukla8498@gmail.com">Email ↗</a></div></div></footer></div>
+  return <div className="explore-page"><a className="skip-link" href="#main-content">Skip to main content</a><header className="site-header"><div className="header-inner wrap"><a className="brand" href="/" aria-label="Avinash Shukla, home"><span className="brand-mark">a<span>.</span></span><span className="brand-name">AVINASH<br />SHUKLA</span></a><span className="header-note">SELECTED WORK<br />& FIELD NOTES</span><button className="menu-toggle" type="button" aria-controls="explore-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close −' : 'Menu +'}</button><nav id="explore-navigation" className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Main navigation"><a href="/">Home</a><a href="/projects">Projects</a><a href="/writing">Writing</a><a href="/activity">Activity</a><a className="nav-contact" href="/Avinash-Shukla-Resume.pdf" download="Avinash-Shukla-Resume.pdf">Résumé ↓</a></nav></div></header><main id="main-content" tabIndex={-1} className="wrap explore-main">{content}</main><footer className="footer"><div className="wrap footer-inner"><a className="footer-brand" href="/">a<span>.</span></a><span>© {new Date().getFullYear()} AVINASH SHUKLA<br />MADE WITH INTENTION.</span><div className="footer-links"><a href="/projects">Projects ↗</a><a href="/writing">Writing ↗</a><a href="/activity">Activity ↗</a><a href="mailto:Avinashshukla8498@gmail.com">Email ↗</a></div></div></footer></div>
 }
