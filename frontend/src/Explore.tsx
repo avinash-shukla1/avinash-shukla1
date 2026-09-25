@@ -5,6 +5,7 @@ import { isPortfolioRepositoryVisible } from './repositoryVisibility'
 import './explore.css'
 import './case-study.css'
 import './gallery-discovery.css'
+import './activity-controls.css'
 
 type Project = { slug: string; title: string; kind: 'Full-stack' | 'Frontend' | 'Experience'; summary: string; stack: string; link?: string; linkLabel?: string; role: string; context: string; contributions: string[]; source: string; note?: string }
 
@@ -40,26 +41,49 @@ function eventLabel(event: GitHubEvent) {
   }
 }
 
+const eventFilters = ['All', 'Commits', 'Repositories', 'Other'] as const
+type EventFilter = typeof eventFilters[number]
+function eventCategory(type: string): EventFilter {
+  if (type === 'PushEvent') return 'Commits'
+  if (type === 'CreateEvent' || type === 'ForkEvent') return 'Repositories'
+  return 'Other'
+}
+
 function Activity() {
   const [events, setEvents] = useState<GitHubEvent[]>([])
   const [status, setStatus] = useState<'loading' | 'ready' | 'empty' | 'error'>('loading')
+  const [refreshing, setRefreshing] = useState(false)
+  const [filter, setFilter] = useState<EventFilter>('All')
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null)
+  const [request, setRequest] = useState(0)
   useEffect(() => {
     const controller = new AbortController()
-    fetch('https://api.github.com/users/avinash-shukla1/events/public?per_page=12', { signal: controller.signal, headers: { Accept: 'application/vnd.github+json' } })
+    fetch('https://api.github.com/users/avinash-shukla1/events/public?per_page=30', { signal: controller.signal, headers: { Accept: 'application/vnd.github+json' } })
       .then(async response => { if (!response.ok) throw new Error('GitHub unavailable'); return response.json() as Promise<GitHubEvent[]> })
-      .then(data => { const safe = Array.isArray(data) ? data.filter(e => e?.id && e?.repo?.name && isPortfolioRepositoryVisible(e.repo.name)).slice(0, 8) : []; setEvents(safe); setStatus(safe.length ? 'ready' : 'empty') })
+      .then(data => {
+        if (controller.signal.aborted) return
+        const safe = Array.isArray(data) ? data.filter(e => e?.id && e?.repo?.name && isPortfolioRepositoryVisible(e.repo.name)).slice(0, 20) : []
+        setEvents(safe)
+        setStatus(safe.length ? 'ready' : 'empty')
+        setLastUpdated(new Date())
+      })
       .catch(() => { if (!controller.signal.aborted) setStatus('error') })
+      .finally(() => { if (!controller.signal.aborted) setRefreshing(false) })
     return () => controller.abort()
-  }, [])
-  return <div data-lg-key="4cf505f3b3" className="explore-content">
-    <div data-lg-key="8c491a8358" className="explore-head"><span data-lg-key="be043c7d9d" className="eyebrow">PUBLIC GITHUB ACTIVITY / LIVE DATA</span><h1 data-lg-key="13fbe07ab2">In the <em data-lg-key="8e9e7e30c0">making.</em></h1><p data-lg-key="24af189e72">Recent public activity from my GitHub profile. The feed is fetched live and may be limited by GitHub availability.</p></div>
+  }, [request])
+  const visible = (filter === 'All' ? events : events.filter(e => eventCategory(e.type) === filter)).slice(0, 8)
+  const refresh = () => { if (refreshing) return; setRefreshing(true); setRequest(value => value + 1) }
+  return <div className="explore-content">
+    <div className="explore-head"><span className="eyebrow">PUBLIC GITHUB ACTIVITY / LIVE DATA</span><h1>In the <em>making.</em></h1><p>Recent public activity from my GitHub profile. The feed is fetched live and may be limited by GitHub availability.</p></div>
     <RepositorySpotlight />
-    <div data-lg-key="00b18bc9bc" className="activity-heading"><span data-lg-key="7b6fb10c24" className="eyebrow">RECENT ACTIVITY / PUBLIC EVENTS</span><h2 data-lg-key="0ddbfdb16f">Work in progress.</h2></div>
-    {status === 'loading' && <p data-lg-key="618f4cd63d" className="feed-state" role="status">Loading public activity…</p>}
-    {status === 'empty' && <p data-lg-key="290ce658df" className="feed-state">No recent public events are available. You can still explore my repositories directly.</p>}
-    {status === 'error' && <p data-lg-key="03adca74f9" className="feed-state" role="status">The live feed is unavailable right now. My GitHub profile is still accessible below.</p>}
-    {status === 'ready' && <div data-lg-key="82c2408eb6" className="activity-list">{events.map(event => { const repo = event.repo!.name!; const date = new Date(event.created_at); const formatted = Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }); return <div data-lg-key="84dc1047a7" className="activity-row" key={event.id}><span data-lg-key="46d831c8d8" className="eyebrow">{formatted}</span><div data-lg-key="6404bb6a99"><strong data-lg-key="38e407166b">{eventLabel(event)}</strong><a data-lg-key="7264ec8d0c" href={`https://github.com/${repo.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener noreferrer">{repo} ↗</a></div></div> })}</div>}
-    <a data-lg-key="b23f70a390" className="explore-pill" href={github} target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+    <div className="activity-heading"><span className="eyebrow">RECENT ACTIVITY / PUBLIC EVENTS</span><h2>Work in progress.</h2></div>
+    <div className="activity-controls"><div className="activity-filter-row" role="group" aria-label="Filter GitHub activity">{eventFilters.map(item => <button key={item} type="button" aria-pressed={filter === item} className={filter === item ? 'active' : ''} onClick={() => setFilter(item)}>{item}</button>)}</div><button className="activity-refresh" type="button" disabled={refreshing || status === 'loading'} onClick={refresh}>{refreshing ? 'Refreshing…' : 'Refresh activity ↻'}</button></div>
+    {lastUpdated && <p className="activity-timestamp">Fetched {lastUpdated.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })} · GitHub public events</p>}
+    {status === 'loading' && <p className="feed-state" role="status">Loading public activity…</p>}
+    {status === 'empty' && <p className="feed-state">No recent public events are available. You can still explore my repositories directly.</p>}
+    {status === 'error' && <p className="feed-state" role="status">The live feed is unavailable right now. Try refreshing or open my GitHub profile below.</p>}
+    {status === 'ready' && (visible.length ? <div className="activity-list" aria-busy={refreshing}>{visible.map(event => { const repo = event.repo!.name!; const date = new Date(event.created_at); const formatted = Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }); return <div className="activity-row" key={event.id}><span className="eyebrow">{formatted}</span><div><strong>{eventLabel(event)}</strong><a href={`https://github.com/${repo.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener noreferrer">{repo} ↗</a></div></div> })}</div> : <p className="feed-state" role="status">No {filter.toLowerCase()} activity in the recent public events. Choose another filter.</p>)}
+    <a className="explore-pill" href={github} target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
   </div>
 }
 
