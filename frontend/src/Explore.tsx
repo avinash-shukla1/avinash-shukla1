@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { updatePageMetadata } from './metadata'
 import RepositorySpotlight from './RepositorySpotlight'
+import { isPortfolioRepositoryVisible } from './repositoryVisibility'
 import './explore.css'
 import './case-study.css'
 
@@ -45,7 +46,7 @@ function Activity() {
     const controller = new AbortController()
     fetch('https://api.github.com/users/avinash-shukla1/events/public?per_page=12', { signal: controller.signal, headers: { Accept: 'application/vnd.github+json' } })
       .then(async response => { if (!response.ok) throw new Error('GitHub unavailable'); return response.json() as Promise<GitHubEvent[]> })
-      .then(data => { const safe = Array.isArray(data) ? data.filter(e => e?.id && e?.repo?.name).slice(0, 8) : []; setEvents(safe); setStatus(safe.length ? 'ready' : 'empty') })
+      .then(data => { const safe = Array.isArray(data) ? data.filter(e => e?.id && e?.repo?.name && isPortfolioRepositoryVisible(e.repo.name)).slice(0, 8) : []; setEvents(safe); setStatus(safe.length ? 'ready' : 'empty') })
       .catch(() => { if (!controller.signal.aborted) setStatus('error') })
     return () => controller.abort()
   }, [])

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { isPortfolioRepositoryVisible } from './repositoryVisibility'
 
 type Repository = {
   id: number
@@ -32,7 +33,7 @@ export default function RepositorySpotlight() {
       .then(data => {
         if (controller.signal.aborted) return
         const recent = Array.isArray(data)
-          ? data.filter(repo => repo && typeof repo.id === 'number' && typeof repo.full_name === 'string' && /^avinash-shukla1\/[^/]+$/i.test(repo.full_name) && !repo.fork && !repo.archived)
+          ? data.filter(repo => repo && typeof repo.id === 'number' && typeof repo.full_name === 'string' && /^avinash-shukla1\/[^/]+$/i.test(repo.full_name) && isPortfolioRepositoryVisible(repo.full_name) && !repo.fork && !repo.archived)
             .sort((a, b) => Date.parse(b.pushed_at || '') - Date.parse(a.pushed_at || '') || a.name.localeCompare(b.name))
             .slice(0, 4)
           : []
@@ -46,7 +47,7 @@ export default function RepositorySpotlight() {
   return <section data-lg-key="599ab319a3" className="repository-spotlight" aria-labelledby="repository-heading">
     <div data-lg-key="48a27487b5" className="repository-heading">
       <div data-lg-key="405ed807cd"><span data-lg-key="a50140803b" className="eyebrow">PUBLIC CODE / REPOSITORY SPOTLIGHT</span><h2 data-lg-key="63246d9a15" id="repository-heading">Open for <em data-lg-key="54871cb390">inspection.</em></h2></div>
-      <p data-lg-key="88a4903e1d">Recently pushed, original public repositories. Details come directly from GitHub, not a hand-picked or invented list.</p>
+      <p data-lg-key="88a4903e1d">Recently pushed, original public repositories selected for this portfolio. Details come directly from GitHub.</p>
     </div>
     {status === 'loading' && <p data-lg-key="cd6f152a8a" className="repository-state" role="status">Loading repositories from GitHub…</p>}
     {status === 'empty' && <p data-lg-key="7bc5de705f" className="repository-state">No original public repositories are available in the recent results. Browse the full GitHub profile below.</p>}
