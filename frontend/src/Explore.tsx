@@ -4,6 +4,7 @@ import RepositorySpotlight from './RepositorySpotlight'
 import { isPortfolioRepositoryVisible } from './repositoryVisibility'
 import './explore.css'
 import './case-study.css'
+import './gallery-discovery.css'
 
 type Project = { slug: string; title: string; kind: 'Full-stack' | 'Frontend' | 'Experience'; summary: string; stack: string; link?: string; linkLabel?: string; role: string; context: string; contributions: string[]; source: string; note?: string }
 
@@ -63,19 +64,48 @@ function Activity() {
 }
 
 function Gallery() {
-  const [filter, setFilter] = useState<Filter>('All')
-  const filtered = filter === 'All' ? projects : projects.filter(project => project.kind === filter)
-  return <div data-lg-key="1230b345c4" className="explore-content">
-    <div data-lg-key="267e467fbc" className="explore-head"><span data-lg-key="9311a58eb9" className="eyebrow">A CLOSER LOOK / PROJECT INDEX</span><h1 data-lg-key="29493e0ca0">Work in <em data-lg-key="050af1713f">focus.</em></h1><p data-lg-key="888558954b">A collection of projects and practical work, from interface experiments to full-stack application development.</p></div>
-    <div data-lg-key="1c5d9d31d3" className="filter-row" role="group" aria-label="Filter projects">{filters.map(item => <button data-lg-key="cd8d308e40" key={item} type="button" aria-pressed={filter === item} onClick={() => setFilter(item)} className={filter === item ? 'active' : ''}>{item} <span data-lg-key="da13eb731b">{item === 'All' ? projects.length : projects.filter(project => project.kind === item).length}</span></button>)}</div>
-    <div data-lg-key="0db023cf4e" className="gallery-grid">{filtered.map((project, index) => <article data-lg-key="bb9d83b433" className="gallery-card" key={project.slug}><div data-lg-key="cb0e7b1b5b" className="gallery-card-top"><span data-lg-key="04886e58dd" className="eyebrow">{project.kind.toUpperCase()} / {String(index + 1).padStart(2, '0')}</span><span data-lg-key="aae43dea0a" aria-hidden="true">↗</span></div><h2 data-lg-key="6dda3ea97c">{project.title}</h2><p data-lg-key="4138c11ebc">{project.summary}</p><div data-lg-key="c7fdaef4ab" className="gallery-card-bottom"><span data-lg-key="53bdb91f1d">{project.stack}</span><a data-lg-key="b3783b11ff" href={`/projects/${project.slug}`} aria-label={`Read ${project.title} case study`}>Read case study ↗</a></div></article>)}</div>
+  const readState = () => {
+    const params = new URLSearchParams(window.location.search)
+    const category = params.get('category')
+    return { category: filters.find(item => item === category) || 'All' as Filter, query: params.get('q') || '' }
+  }
+  const [filter, setFilter] = useState<Filter>(() => readState().category)
+  const [query, setQuery] = useState(() => readState().query)
+  useEffect(() => {
+    const sync = () => { const state = readState(); setFilter(state.category); setQuery(state.query) }
+    window.addEventListener('popstate', sync)
+    return () => window.removeEventListener('popstate', sync)
+  }, [])
+  const changeFilters = (category: Filter, search: string, replace = false) => {
+    setFilter(category)
+    setQuery(search)
+    const url = new URL(window.location.href)
+    if (category === 'All') url.searchParams.delete('category')
+    else url.searchParams.set('category', category)
+    if (search.trim()) url.searchParams.set('q', search.trim())
+    else url.searchParams.delete('q')
+    window.history[replace ? 'replaceState' : 'pushState']({}, '', url)
+  }
+  const search = query.trim().toLocaleLowerCase()
+  const filtered = projects.filter(project =>
+    (filter === 'All' || project.kind === filter) &&
+    (!search || [project.title, project.summary, project.stack, project.kind].some(value => value.toLocaleLowerCase().includes(search)))
+  )
+  return <div className="explore-content">
+    <div className="explore-head"><span className="eyebrow">A CLOSER LOOK / PROJECT INDEX</span><h1>Work in <em>focus.</em></h1><p>A collection of projects and practical work, from interface experiments to full-stack application development.</p></div>
+    <div className="gallery-controls"><div className="filter-row" role="group" aria-label="Filter projects">{filters.map(item => <button key={item} type="button" aria-pressed={filter === item} onClick={() => changeFilters(item, query)} className={filter === item ? 'active' : ''}>{item} <span>{item === 'All' ? projects.length : projects.filter(project => project.kind === item).length}</span></button>)}</div><label className="gallery-search"><span className="eyebrow">FIND A PROJECT</span><input type="search" value={query} onChange={event => changeFilters(filter, event.target.value, true)} placeholder="Search by name or stack" autoComplete="off" /></label></div>
+    <p className="gallery-results" role="status" aria-live="polite">Showing {filtered.length} of {projects.length} projects{filter !== 'All' ? ` in ${filter}` : ''}{search ? ` matching “${query.trim()}”` : ''}.</p>
+    {filtered.length ? <div className="gallery-grid">{filtered.map(project => <article className="gallery-card" key={project.slug}><div className="gallery-card-top"><span className="eyebrow">{project.kind.toUpperCase()}</span><span aria-hidden="true">↗</span></div><h2>{project.title}</h2><p>{project.summary}</p><div className="gallery-card-bottom"><span>{project.stack}</span><a href={`/projects/${project.slug}`} aria-label={`Read ${project.title} case study`}>Read case study ↗</a></div></article>)}</div> : <div className="gallery-empty"><h2>No projects found.</h2><p>Try a different search or browse the full collection.</p><button type="button" onClick={() => changeFilters('All', '')}>Show all projects ↗</button></div>}
   </div>
 }
 
 function CaseStudy({ slug }: { slug: string }) {
   const project = projects.find(item => item.slug === slug)
   if (!project) return <NotFound />
-  return <article className="explore-content case-study"><a className="back-link" href="/projects">← All projects</a><div className="explore-head"><span className="eyebrow">PROJECT STORY / {project.kind.toUpperCase()}</span><h1>{project.title}<span className="title-dot">.</span></h1><p>{project.summary}</p></div><div className="case-meta"><div><span className="eyebrow">ROLE</span><strong>{project.role}</strong></div><div><span className="eyebrow">STACK / CLASSIFICATION</span><strong>{project.stack}</strong></div></div><div className="case-sections"><section className="case-section" aria-labelledby="context-heading"><span className="eyebrow">01 / CONTEXT</span><div><h2 id="context-heading">The brief.</h2><p>{project.context}</p></div></section><section className="case-section" aria-labelledby="contributions-heading"><span className="eyebrow">02 / DOCUMENTED WORK</span><div><h2 id="contributions-heading">What I worked on.</h2><ul>{project.contributions.map(item => <li key={item}>{item}</li>)}</ul></div></section><section className="case-section case-evidence" aria-labelledby="evidence-heading"><span className="eyebrow">03 / SOURCE & SCOPE</span><div><h2 id="evidence-heading">What you can verify.</h2><p>{project.source}</p>{project.note && <p className="case-note">{project.note}</p>}{project.link && <a className="explore-pill" href={project.link} target="_blank" rel="noopener noreferrer">{project.linkLabel} ↗</a>}</div></section></div><div className="next-steps"><a href="/projects">Browse all projects ↗</a><a href={resume} download="Avinash-Shukla-Resume.pdf">Download résumé ↓</a></div></article>
+  const index = projects.indexOf(project)
+  const previous = projects[index - 1]
+  const next = projects[index + 1]
+  return <article className="explore-content case-study"><a className="back-link" href="/projects">← All projects</a><div className="explore-head"><span className="eyebrow">PROJECT STORY / {project.kind.toUpperCase()}</span><h1>{project.title}<span className="title-dot">.</span></h1><p>{project.summary}</p></div><div className="case-meta"><div><span className="eyebrow">ROLE</span><strong>{project.role}</strong></div><div><span className="eyebrow">STACK / CLASSIFICATION</span><strong>{project.stack}</strong></div></div><div className="case-sections"><section className="case-section" aria-labelledby="context-heading"><span className="eyebrow">01 / CONTEXT</span><div><h2 id="context-heading">The brief.</h2><p>{project.context}</p></div></section><section className="case-section" aria-labelledby="contributions-heading"><span className="eyebrow">02 / DOCUMENTED WORK</span><div><h2 id="contributions-heading">What I worked on.</h2><ul>{project.contributions.map(item => <li key={item}>{item}</li>)}</ul></div></section><section className="case-section case-evidence" aria-labelledby="evidence-heading"><span className="eyebrow">03 / SOURCE & SCOPE</span><div><h2 id="evidence-heading">What you can verify.</h2><p>{project.source}</p>{project.note && <p className="case-note">{project.note}</p>}{project.link && <a className="explore-pill" href={project.link} target="_blank" rel="noopener noreferrer">{project.linkLabel} ↗</a>}</div></section></div><nav className="case-pagination" aria-label="Case study navigation">{previous ? <a href={`/projects/${previous.slug}`}><span className="eyebrow">← PREVIOUS STORY</span><strong>{previous.title}</strong></a> : <span />} {next ? <a href={`/projects/${next.slug}`}><span className="eyebrow">NEXT STORY →</span><strong>{next.title}</strong></a> : <span />}</nav><div className="next-steps"><a href="/projects">Browse all projects ↗</a><a href={resume} download="Avinash-Shukla-Resume.pdf">Download résumé ↓</a></div></article>
 }
 
 function Writing({ slug }: { slug?: string }) {
