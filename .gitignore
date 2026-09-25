@@ -1,0 +1,6 @@
+# Logen: toolchain state and temp scratch — regenerated, never source. Tracking these made
+# every re-publish merge one container's build scratch against another's,
+# which is unresolvable for a binary like .tmp/mix_lock_*/lock_0.
+.hex/
+.mix/
+.tmp/

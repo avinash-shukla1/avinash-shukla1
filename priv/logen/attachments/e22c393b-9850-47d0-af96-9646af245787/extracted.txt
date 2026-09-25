@@ -1,0 +1,300 @@
+Avinash Shukla 
+ FULL-STACK Web Developer 
+ 8435892398 | Avinashshukla8498@gmail.com 
+ Linke d I n | Git H u b | Instag r a m | Portfol i o 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Education 
+ Bachelor of Science( mathematics) – Swami Vivekananda College, Raisen 
+ DCA (Diploma of Computer Application) – Makhanlal Chaturvedi University 
+ Academic record- 10 th : 71 % , 12 th :67% , Bsc : 60% 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Skills 
+ Programming & coding 
+ Languages: javascript , python 
+ FrameWork & Library : Reactjs , Nodejs , NextJs 
+ Technologies : 
+ HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, Bootstrap, Git, GitHub, Express.js, 
+ Google Authentication, JWT Authentication, RESTful APIs, Payment Gateway Integration ( Razorpay /Stripe), Deployment ( Vercel , Netlify, Render, Railway) 
+ Database: 
+ MongoDB, Mongoose, SQL (Basics) , 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Projects 
+ Frontend Projects: 
+ Q Clay Clone : Full animated website using HTML, CSS, JS, GSAP, Loco, ScrollTrigger . Live Demo checkout click i t 
+ Obys Agency Clone : Replicated the Obys Agency website. Live l i n k 
+ Small JS Projects : - 
+ Collection of small web applications. Music Pla y e r | Portfolio S i t e 
+ Backend Projects: - 
+ WhatsApp Clone : Built using Node.js, Express, and Socket.io for real-time messaging. GitHub 
+ C o d e 
+ React Js Projects :- 
+ Pinterest Clone : Developed with Mongoose and Passport.js for authentication. Git Hu b 
+ Instagram Clone : Full-stack social media clone. Git H u b Re act Projects: 
+ E-commerce Cart : Fully functional e-commerce cart. Live D e m o 
+ TMDB Movie App , Quiz App , Gallery App MERN Stack Project : 
+ Bookstore App : A mobile app for book enthusiasts to explore new authors and titles. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Achievements 
+ Participated in Sheryians Coding School’s Senior vs Junior competition, with design selected in the top 20 students. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Certifications 
+ Certificate in Full-Stack Web Development (Front-end, Back-end, React). 
+ Seniors vs Juniors Web Development Championship 2023. 
+ Certificate of Appreciation – Full Stack Developer Internship (5 Months) – Tourmates (Aug 2025) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Experience :- Full Stack Developer Intern – Tourmates (Feb 2025 – Aug 2025) 
+ Worked on Property Partner module, a property and hotel management system. 
+ Developed multi-step room creation forms with image upload & validation features. 
+ Integrated REST APIs for property listings, bookings, and partner dashboard. 
+ Implemented secure authentication and role-based access (Admin, Property Owner, Staff). 
+ Used React.js, Node.js, Express.js, MongoDB for full stack development. 
+ Deployed project on cloud server and optimized performance for faster load times.
