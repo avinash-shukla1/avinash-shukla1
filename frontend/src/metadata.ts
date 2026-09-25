@@ -3,7 +3,7 @@ type Metadata = { title: string; description: string }
 const pages: Record<string, Metadata> = {
   '/projects': { title: 'Projects & case studies', description: 'Explore Avinash Shukla’s frontend and full-stack projects, including real-time messaging and the Tourmates Property Partner work.' },
   '/writing': { title: 'Writing & field notes', description: 'Notes by Avinash Shukla on building thoughtful interfaces, motion on the web, and full-stack development.' },
-  '/activity': { title: 'GitHub activity', description: 'Recent public GitHub activity and repositories from Avinash Shukla.' },
+  '/activity': { title: 'GitHub repositories & activity', description: 'Explore recently pushed public GitHub repositories and recent activity from Avinash Shukla.' },
   '/projects/whatsapp-clone': { title: 'WhatsApp Clone — case study', description: 'Avinash Shukla’s real-time messaging project using Node.js, Express and Socket.io.' },
   '/projects/obys-agency-clone': { title: 'Obys Agency Clone — case study', description: 'An expressive frontend recreation focused on animation and interaction by Avinash Shukla.' },
   '/projects/tourmates-property-partner': { title: 'Tourmates Property Partner — case study', description: 'Property management workflows built during Avinash Shukla’s full-stack internship at Tourmates.' },

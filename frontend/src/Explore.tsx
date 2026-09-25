@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { updatePageMetadata } from './metadata'
+import RepositorySpotlight from './RepositorySpotlight'
 import './explore.css'
 
 type Project = { slug: string; title: string; kind: 'Full-stack' | 'Frontend' | 'Experience'; summary: string; stack: string; link?: string; linkLabel?: string; detail?: string[]; role?: string }
@@ -49,6 +50,8 @@ function Activity() {
   }, [])
   return <div className="explore-content">
     <div className="explore-head"><span className="eyebrow">PUBLIC GITHUB ACTIVITY / LIVE DATA</span><h1>In the <em>making.</em></h1><p>Recent public activity from my GitHub profile. The feed is fetched live and may be limited by GitHub availability.</p></div>
+    <RepositorySpotlight />
+    <div className="activity-heading"><span className="eyebrow">RECENT ACTIVITY / PUBLIC EVENTS</span><h2>Work in progress.</h2></div>
     {status === 'loading' && <p className="feed-state" role="status">Loading public activity…</p>}
     {status === 'empty' && <p className="feed-state">No recent public events are available. You can still explore my repositories directly.</p>}
     {status === 'error' && <p className="feed-state" role="status">The live feed is unavailable right now. My GitHub profile is still accessible below.</p>}
