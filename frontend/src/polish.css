@@ -1,0 +1,28 @@
+/* Precision layer: retain the warm-paper identity while keeping controls usable. */
+.skip-link{position:fixed;z-index:100;top:12px;left:12px;transform:translateY(-170%);padding:12px 18px;background:var(--ink);color:var(--paper);font:600 14px 'Host Grotesk',sans-serif;transition:transform .15s}
+.skip-link:focus{transform:translateY(0)}
+:where(a,button):focus-visible{outline:3px solid #9d2e13;outline-offset:4px}
+:where(.nav-contact,.explore-pill,.contact-email):focus-visible{outline-color:#fff3e5}
+#main-content:focus{outline:none}
+@media(max-width:760px){
+  .nav-links>a{min-height:44px;display:flex;align-items:center}
+  .menu-toggle{min-width:44px;min-height:44px;text-align:right}
+  .filter-row button{min-height:44px}
+  .gallery-card-bottom a,.note-row>a,.back-link,.next-steps a{min-height:44px;display:inline-flex;align-items:center}
+  .footer-links{justify-content:flex-start;gap:14px 20px;flex-wrap:wrap}
+  .footer-links a{display:inline-flex;align-items:center;min-height:44px}
+  .hero-intro .text-link{margin-bottom:10px}
+  .resume-link{margin-left:0;margin-right:0}
+  .project-meta{gap:4px}
+  .explore-head h1,.gallery-card h2,.note-row h2,.case-meta strong{overflow-wrap:break-word}
+}
+@media(max-width:420px){
+  .hero h1{font-size:clamp(38px,10vw,47px);letter-spacing:-.07em;line-height:1.04}
+  .contact-section h2{font-size:clamp(44px,11vw,56px)}
+  .explore-head h1{font-size:clamp(43px,11vw,52px)}
+  .gallery-card-bottom{display:flex;align-items:flex-start;flex-direction:column;gap:4px}
+  .gallery-card-bottom a{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}

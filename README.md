@@ -1,83 +1,90 @@
 <h1 align="center">Hello 🙏, I'm Avinash Shukla</h1>
-<h3 align="center">FULL stack Web Developer | MERN Stack | Ethical Hacker | Data Scientist Enthusiast</h3>
+<h3 align="center">Full-Stack Web Developer · MERN Stack · Ethical Hacking & Data Science Enthusiast</h3>
 
----
+<p align="center">
+  <a href="https://github.com/avinash-shukla1">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/avinash-shukla-66b11823a/">LinkedIn</a> ·
+  <a href="https://www.instagram.com/shadow_code_x/">Instagram</a> ·
+  <a href="https://avinash-portfolio-olive.vercel.app/">Portfolio</a>
+</p>
 
-## 🚀 About Me  
-- 🔭 Currently working on **WhatsApp Clone & Bookstore App**  
-- 🌱 Learning **Ethical Hacking, DevOps, & Data Science**  
-- 💬 Ask me about **Web Development, Backend, MongoDB, Python, MySQL, RESTful APIs**  
-- 🎯 Passionate about **Building Scalable Web Apps & AI/ML Projects**  
+## 🚀 About Me
 
----
+- 🔭 Currently working on the **WhatsApp Clone** and **Bookstore App**.
+- 🌱 Learning **ethical hacking, DevOps, and data science**.
+- 💬 Ask me about **web development, backend systems, MongoDB, Python, MySQL, and RESTful APIs**.
+- 🎯 Passionate about building **scalable web apps** and exploring **AI/ML projects**.
 
-## 🛠 Tech Stack  
-### **Programming & Backend**  
+## 🛠 Tech Stack
+
+**Programming & Backend**  
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![RESTful API](https://img.shields.io/badge/RESTful_API-005571?style=for-the-badge&logo=fastapi&logoColor=white)
+![RESTful APIs](https://img.shields.io/badge/RESTful_APIs-005571?style=for-the-badge)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-### **Frontend & UI/UX**  
+**Frontend & UI/UX**  
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Motion.js](https://img.shields.io/badge/Motion.js-F56F36?style=for-the-badge&logo=framer&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Motion](https://img.shields.io/badge/Motion.js-F56F36?style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
-### **Data Science & AI/ML**  
+**Data Science & AI/ML**  
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=for-the-badge)
 
-## 🏆Experience:-Full Stack Developer Intern – Tourmates (Feb 2025 – Aug 2025)
-• **Worked on Property Partner module, a property and hotel management system.**
-• **Developed multi-step room creation forms with image upload & validation features.**
-• **Integrated REST APIs for property listings, bookings, and partner dashboard.**
-• **Implemented secure authentication and role-based access (Admin, Property Owner, Staff).**
-• **Used React.js, Node.js, Express.js, MongoDB for full stack development.**
-• **Deployed project on cloud server and optimized performance for faster load times.**
+## 💼 Experience
 
-## 🏆 Achievements & Certifications  
-- 🏅 **Sheryians Coding School - Senior vs Junior Championship** (Top 20 Designs)  
-- 📜 **Full-Stack Web Development Certification**  
+### Full-Stack Developer Intern · Tourmates
+**February 2025 – August 2025**
 
----
+- Worked on the **Property Partner** module, a property and hotel management system.
+- Developed multi-step room-creation forms with image uploads and validation.
+- Integrated REST APIs for property listings, bookings, and the partner dashboard.
+- Implemented authentication and role-based access for admins, property owners, and staff.
+- Built with **React.js, Node.js, Express.js, and MongoDB**; deployed to a cloud server and worked on performance improvements.
 
-## 📂 Projects  
-
+## 🏆 Achievements & Certifications
 ### **portfolio site**
 🚀[https://avinash-portfolio-olive.vercel.app/](https://avinash-portfolio-bice.vercel.app/)
 (https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
 
+- **Top 20 selected design** — Sheryians Coding School's Senior vs Junior competition.
+- **Certificate in Full-Stack Web Development** — frontend, backend, and React.
+- **Certificate of Appreciation** — Full-Stack Developer Internship, Tourmates.
 
-### **Frontend Projects**  
+## 📂 Projects
 
-🚀 [Q Clay Clone](#) - Fully animated website (GSAP, ScrollTrigger, Motion.js)  
-🚀 [Obys Agency Clone](https://avinash-shukla1.github.io/obys.agency-clone/)  
-🚀 [Music Player](#) | [Portfolio Site](https://avinash-portfolio-olive.vercel.app/)  
+### Portfolio
+- [Portfolio site](https://avinash-portfolio-olive.vercel.app/)
 
-### **Backend & Full-Stack Projects**  
-🔥 [WhatsApp Clone](https://whatsapp-clone-delta.vercel.app/) - Real-time messaging using Socket.io  
-### **MERN & AI/ML Projects**  
-🤖 **AI Chatbot** - AI-powered chatbot using **Python & NLP**  
-📊 **Data Analysis Project** - Analyzing business data using **Pandas & NumPy**  
+### Frontend
+- **Q Clay Clone** — animated website built with HTML, CSS, JavaScript, GSAP, Locomotive Scroll, and ScrollTrigger.
+- [Obys Agency Clone](https://avinash-shukla1.github.io/obys.agency-clone/) — an agency website recreation.
+- **Music Player** — a smaller JavaScript project.
 
----
+### Backend & Full-Stack
+- [WhatsApp Clone](https://whatsapp-clone-delta.vercel.app/) — real-time messaging with Node.js, Express, and Socket.io.
+- **Bookstore App** — a project for readers to explore books and authors.
 
-## 📊 GitHub Stats  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=avinash-shukla1&show_icons=true&theme=radical)  
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=avinash-shukla1&layout=compact&theme=radical)  
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=avinash-shukla1&theme=radical)  
+### Data Science & AI/ML
+- **AI Chatbot** — a Python and NLP exploration.
+- **Data Analysis Project** — analysis with Pandas and NumPy.
 
----
+## 📊 GitHub Stats
 
-## 📫 Connect with Me  
-[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/avinash-shukla1)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/avinash-shukla-66b11823a/)  
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/code_withavi_/)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=avinash-shukla1&show_icons=true&theme=radical" alt="Avinash's GitHub statistics" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=avinash-shukla1&layout=compact&theme=radical" alt="Avinash's most used languages" />
+</p>
 
----
+## 📫 Connect with Me
 
-🔹 *"Never stop learning, because life never stops teaching."* 🚀
+- [GitHub](https://github.com/avinash-shukla1)
+- [LinkedIn](https://www.linkedin.com/in/avinash-shukla-66b11823a/)
+- [Instagram](https://www.instagram.com/shadow_code_x/)
+- [Email](mailto:Avinashshukla8498@gmail.com)
 
+> Never stop learning, because life never stops teaching.
