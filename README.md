@@ -6,7 +6,7 @@
   <a href="https://github.com/avinash-shukla1">GitHub</a> ·
   <a href="https://www.linkedin.com/in/avinash-shukla-66b11823a/">LinkedIn</a> ·
   <a href="https://www.instagram.com/shadow_code_x/">Instagram</a> ·
-  <a href="https://avinash-portfolio-olive.vercel.app/">Portfolio</a>
+  <a href="https://frontend-azure-xi-9fum8hsp7s.vercel.app/">Portfolio</a>
 </p>
 
 ## 🚀 About Me
@@ -49,8 +49,8 @@
 
 ## 🏆 Achievements & Certifications
 
-- 🚀 [Live Portfolio](https://avinash-portfolio-olive.vercel.app/)
-- [Frontend Deployment](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
+- 🚀 [Live Portfolio](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
+- [New Frontend Deployment](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
 - **Top 20 selected design** — Sheryians Coding School's Senior vs Junior competition
 - **Certificate in Full-Stack Web Development** — frontend, backend, and React
 - **Certificate of Appreciation** — Full-Stack Developer Internship, Tourmates
@@ -58,7 +58,7 @@
 ## 📂 Projects
 
 ### Portfolio
-- [Portfolio Site](https://avinash-portfolio-olive.vercel.app/)
+- [Portfolio Site](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
 
 ### Frontend
 - **Q Clay Clone** — animated website built with HTML, CSS, JavaScript, GSAP, Locomotive Scroll, and ScrollTrigger
