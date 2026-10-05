@@ -48,8 +48,7 @@
 
 ## 🏆 Achievements & Certifications
 ### **Portfolio Site**
-- 🚀 [Live Portfolio](https://avinash-portfolio-olive.vercel.app/)
-- [Frontend Deployment](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
+- [Live Portfolio](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
 
 - **Top 20 selected design** — Sheryians Coding School's Senior vs Junior competition.
 - **Certificate in Full-Stack Web Development** — frontend, backend, and React.
