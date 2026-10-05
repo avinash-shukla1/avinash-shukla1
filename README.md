@@ -47,9 +47,9 @@
 - Built with **React.js, Node.js, Express.js, and MongoDB**; deployed to a cloud server and worked on performance improvements.
 
 ## 🏆 Achievements & Certifications
-### **portfolio site**
-🚀[https://avinash-portfolio-olive.vercel.app/](https://avinash-portfolio-bice.vercel.app/)
-(https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
+### **Portfolio Site**
+- 🚀 [Live Portfolio](https://avinash-portfolio-olive.vercel.app/)
+- [Frontend Deployment](https://frontend-azure-xi-9fum8hsp7s.vercel.app/)
 
 - **Top 20 selected design** — Sheryians Coding School's Senior vs Junior competition.
 - **Certificate in Full-Stack Web Development** — frontend, backend, and React.
