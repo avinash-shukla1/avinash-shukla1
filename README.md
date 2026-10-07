@@ -56,8 +56,6 @@
 
 ## 📂 Projects
 
-### Portfolio
-- [Portfolio site](https://avinash-portfolio-olive.vercel.app/)
 
 ### Frontend
 - **Q Clay Clone** — animated website built with HTML, CSS, JavaScript, GSAP, Locomotive Scroll, and ScrollTrigger.
