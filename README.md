@@ -1,5 +1,5 @@
 <h1 align="center">Hello 🙏, I'm Avinash Shukla</h1>
-<h3 align="center">Full-Stack Web Developer · MERN Stack · Ethical Hacking & Data Science Enthusiast</h3>
+<h3 align="center">Full-Stack Web Developer · MERN Stack · & Data Science Enthusias</h3>
 
 <p align="center">
   <a href="https://github.com/avinash-shukla1">GitHub</a> ·
